@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:twnsqr/widgets/customButton.dart';
+import 'package:twnsqr/widgets/customTitle.dart';
+import 'package:twnsqr/widgets/progressBar.dart';
 
 class GoalCard extends StatelessWidget {
   const GoalCard({super.key});
@@ -52,16 +54,8 @@ class GoalCard extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(width: 40,),
-          const SizedBox(
-            height: 60,
-            width: 60,
-            child: CircularProgressIndicator(
-              strokeWidth: 8,
-              backgroundColor: Colors.white,
-              color: Colors.blue,
-              value: 0.6,),
-          )
+          const SizedBox(width: 30,),
+          const ProgressBar(),
         ],
       ),
     );
