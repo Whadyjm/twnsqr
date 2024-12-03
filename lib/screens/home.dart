@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:twnsqr/models/categoryModel.dart';
+import 'package:twnsqr/widgets/activities.dart';
 import 'package:twnsqr/widgets/categories.dart';
 import 'package:twnsqr/widgets/categoryWidget.dart';
 import 'package:twnsqr/widgets/customAppbar.dart';
@@ -17,8 +18,6 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
-  List<Step> steps = [];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +27,7 @@ class _HomeState extends State<Home> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const CustomAppbar(),
-            /// TODO: detectar locación real
+            /// TODO: detect real location
             CustomTitle(
               text: 'This week in Estepona',
               size: 22,),
@@ -37,7 +36,7 @@ class _HomeState extends State<Home> {
             const SizedBox(height: 20,),
             const SearchField(),
             const Categories(),
-            // Stepper(steps: steps)
+            const Activities(),
           ],
         ),
       ),

@@ -17,11 +17,12 @@ class GoalCard extends StatelessWidget {
       width: MediaQuery.sizeOf(context).width,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
-        boxShadow: const [
+        boxShadow: [
           BoxShadow(
-            color: Colors.grey,
+            color: Colors.grey.shade400,
             spreadRadius: 2,
-            blurRadius: 5,
+            blurRadius: 10,
+            offset: const Offset(1, 3),
           )
         ],
         color: Colors.blue.shade200

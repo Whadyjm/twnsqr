@@ -7,12 +7,13 @@ class SearchField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
-            color: Colors.grey,
+            color: Colors.grey.shade400,
             spreadRadius: 2,
-            blurRadius: 5,
+            blurRadius: 10,
+            offset: const Offset(1, 3)
           )
         ],
       ),
