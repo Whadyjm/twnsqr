@@ -46,24 +46,21 @@ class _ActivitiesState extends State<Activities> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.only(top: 20.0),
-        child: SizedBox(
-          height: 500,
-          width: 500,
-          child: ListView.builder(
-            scrollDirection: Axis.vertical,
-              itemCount: 4,
-              itemBuilder: (context, index){
-                return ActivityWidget(
-                  time: activityList[index].time,
-                  duration: activityList[index].duration,
-                  title: activityList[index].title,
-                  location: activityList[index].location,
-                  spots: activityList[index].spots,
-                  price: activityList[index].price,);
-              },
-          ),
+      child: SizedBox(
+        height: 700,
+        width: 320,
+        child: ListView.builder(
+          scrollDirection: Axis.vertical,
+            itemCount: 4,
+            itemBuilder: (context, index){
+              return ActivityWidget(
+                time: activityList[index].time,
+                duration: activityList[index].duration,
+                title: activityList[index].title,
+                location: activityList[index].location,
+                spots: activityList[index].spots,
+                price: activityList[index].price,);
+            },
         ),
       ),
     );

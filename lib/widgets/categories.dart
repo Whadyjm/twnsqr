@@ -14,7 +14,7 @@ class Categories extends StatefulWidget {
 class _CategoriesState extends State<Categories> {
 
   List <CategoryModel> categoryList = [
-    CategoryModel(widget: const Icon(IconlyBold.filter)), /// TODO: change icon
+    CategoryModel(widget: const Icon(IconlyLight.filter)), /// TODO: change icon
     CategoryModel(widget: const Text('All', style: TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.w500),)),
     CategoryModel(widget: const Text('Sports', style: TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.w500),)),
     CategoryModel(widget: const Text('Food', style: TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.w500),)),
@@ -25,15 +25,18 @@ class _CategoriesState extends State<Categories> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: SizedBox(
-        height: 50,
-        width: 500,
-        child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          itemCount: 6,
-          itemBuilder: (context, index) {
-            return CategoryWidget(categoria: categoryList[index].widget);
-          },
+      child: Padding(
+        padding: const EdgeInsets.only(left: 20),
+        child: SizedBox(
+          height: 50,
+          width: 500,
+          child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemCount: 6,
+            itemBuilder: (context, index) {
+              return CategoryWidget(categoria: categoryList[index].widget);
+            },
+          ),
         ),
       ),
     );

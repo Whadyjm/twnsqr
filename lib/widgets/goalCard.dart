@@ -12,52 +12,57 @@ class GoalCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 125,
-      width: MediaQuery.sizeOf(context).width,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.shade400,
-            spreadRadius: 2,
-            blurRadius: 10,
-            offset: const Offset(1, 3),
-          )
-        ],
-        color: Colors.blue.shade200
-      ),
-      child: Row(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text("You're close to your goal!", style: TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w600),),
-                const Text('Join more sport activities to collect more points', style: TextStyle(color: Colors.black),),
-                const SizedBox(height: 15,),
-                Row(
+    return Center(
+      child: Container(
+        padding: EdgeInsets.all(5),
+        height: 155,
+        width: 350,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.shade300,
+              spreadRadius: 3,
+              blurRadius: 5,
+              offset: const Offset(2, 3),
+            )
+          ],
+          color: Colors.blue.shade100
+        ),
+        child: Center(
+          child: Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    CustomButton(
-                      width: 80,
-                      height: 30,
-                      text: 'Join now',
-                      fontColor: Colors.white,),
-                    const SizedBox(width: 18,),
-                    CustomButton(
-                      width: 80,
-                      height: 30,
-                      text: 'My points',
-                      fontColor: Colors.white,),
+                    const Text("You're close to your goal!", style: TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w600),),
+                    const Text('Join more sport activities to collect\nmore points', style: TextStyle(color: Colors.black),),
+                    const SizedBox(height: 15,),
+                    Row(
+                      children: [
+                        CustomButton(
+                          width: 80,
+                          height: 30,
+                          text: 'Join now',
+                          fontColor: Colors.white, color: Colors.black,),
+                        const SizedBox(width: 18,),
+                        CustomButton(
+                          width: 80,
+                          height: 30,
+                          text: 'My points',
+                          fontColor: Colors.white, color: Colors.black,),
+                      ],
+                    )
                   ],
-                )
-              ],
-            ),
+                ),
+              ),
+              const ProgressBar(),
+            ],
           ),
-          const SizedBox(width: 30,),
-          const ProgressBar(),
-        ],
+        ),
       ),
     );
   }

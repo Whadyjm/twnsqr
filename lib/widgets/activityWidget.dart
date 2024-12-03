@@ -26,7 +26,7 @@ class ActivityWidget extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Container(
         padding: const EdgeInsets.only(top: 5, right: 15, left: 15),
-        height: 140,
+        height: 150,
         width: 300,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
@@ -34,9 +34,9 @@ class ActivityWidget extends StatelessWidget {
           boxShadow: [
             BoxShadow(
               color: Colors.grey.shade300,
-              blurRadius: 10,
-              spreadRadius: 5,
-              offset: const Offset(1, 5)
+              blurRadius: 5,
+              spreadRadius: 0,
+              offset: const Offset(2, 5)
             )
           ]
         ),
@@ -78,7 +78,7 @@ class ActivityWidget extends StatelessWidget {
                       Text('$spots spots left', style: const TextStyle(color: Colors.grey),)
                     ],
                   ),
-                )
+                ),
               ],
             ),
             Column(
@@ -89,8 +89,9 @@ class ActivityWidget extends StatelessWidget {
                 CustomButton(
                     width: 70,
                     height: 40,
-                    text: 'Join',
-                    fontColor: Colors.white),
+                    text: int.parse(spots) == 0 ? 'Sold Out':'Join',
+                    color: int.parse(spots) == 0 ? Colors.grey:Colors.black,
+                    fontColor: Colors.white,),
                 const SizedBox(height: 10,),
               ],
             )

@@ -9,17 +9,17 @@ class ProgressBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
         children: [
-          const SizedBox(
+          SizedBox(
             height: 70,
             width: 70,
             child: CircularProgressIndicator(
               strokeWidth: 8,
               backgroundColor: Colors.white,
-              color: Colors.blue,
+              color: Colors.blue.shade400,
               value: 0.6,),
           ),
           Positioned(
-              bottom: 12,
+              bottom: 10,
               left: 15,
               child: CustomTitle(text: '27', size: 35,))
         ]

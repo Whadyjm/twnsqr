@@ -6,12 +6,14 @@ class CustomButton extends StatelessWidget {
     required this.width,
     required this.height,
     required this.text,
+    required this.color,
     required this.fontColor
   });
 
   double height;
   double width;
   String text;
+  Color color;
   Color fontColor;
 
   @override
@@ -21,8 +23,8 @@ class CustomButton extends StatelessWidget {
       height: height,
       width: width,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(5),
-        color: Colors.black,
+        borderRadius: BorderRadius.circular(8),
+        color: color,
       ),
       child: Center(child: Text(text, style: TextStyle(color: fontColor),)),
     );
