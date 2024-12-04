@@ -1,7 +1,10 @@
 class ActivityModel {
-  final String time, duration, title, location, spots, price; /// just String by now
+
+  final String time, duration, title, location, spots, price;/// just String by now
+  final String? category;
 
   ActivityModel({
+    this.category,
     required this.time,
     required this.duration,
     required this.title,
