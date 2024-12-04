@@ -13,7 +13,7 @@ class CustomAppbar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             /// TODO: get real date!!
-            const Text('Tues, Nov 12', style: TextStyle(fontSize: 15, color: Colors.grey),),
+            const Text('Tues, Nov 12', style: TextStyle(fontFamily: 'sf-pro-display', fontSize: 15, color: Colors.grey),),
             SizedBox(
                 child: Row(
                   children: [

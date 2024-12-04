@@ -90,8 +90,8 @@ class _HomeState extends State<Home> {
                   children: [
                     Row(
                       children: [
-                        Text('Today', style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),),
-                        Text('/tuesday', style: TextStyle(color: Colors.grey),)
+                        Text('Today', style: TextStyle(fontFamily: 'sf-pro-display', color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),),
+                        Text('/tuesday', style: TextStyle(fontFamily: 'sf-pro-display', color: Colors.grey),)
                       ],
                     ),
                     Activities(),

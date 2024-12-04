@@ -13,6 +13,6 @@ class CustomTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(text,
-      style: TextStyle(color: Colors.black, fontSize: size, fontWeight: FontWeight.w600),);
+      style: TextStyle(fontFamily: 'sf-pro-display', color: Colors.black, fontSize: size, fontWeight: FontWeight.w600),);
   }
 }

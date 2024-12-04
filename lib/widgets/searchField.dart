@@ -33,7 +33,7 @@ class SearchField extends StatelessWidget {
             prefix: const SizedBox(width: 30,),
             suffixIcon: const Icon(Icons.search_rounded, color: Colors.grey, size: 35,),
             hintText: 'What do you feel like doing?',
-            hintStyle: TextStyle(fontWeight: FontWeight.w400, color: Colors.grey.shade300),
+            hintStyle: TextStyle(fontFamily: 'sf-pro-display', fontWeight: FontWeight.w400, color: Colors.grey.shade300),
           ),
         ),
       ),

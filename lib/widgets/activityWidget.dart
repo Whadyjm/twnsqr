@@ -49,17 +49,17 @@ class ActivityWidget extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Text(time, style: const TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w600),),
+                    Text(time, style: const TextStyle(fontFamily: 'sf-pro-display', color: Colors.black, fontSize: 18, fontWeight: FontWeight.w600),),
                     const SizedBox(width: 10,),
-                    Text(duration, style: const TextStyle(color: Colors.grey),),
+                    Text(duration, style: const TextStyle(fontFamily: 'sf-pro-display', color: Colors.grey),),
                   ],
                 ),
-                Text(title, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: Colors.black),),
+                Text(title, style: const TextStyle(fontFamily: 'sf-pro-display', fontWeight: FontWeight.bold, fontSize: 20, color: Colors.black),),
                 Row(
                   children: [
                     const Icon(IconlyLight.location, size: 20, color: Colors.grey,),
                     const SizedBox(width: 5,),
-                    Text(location, style: const TextStyle(color: Colors.grey),)
+                    Text(location, style: const TextStyle(fontFamily: 'sf-pro-display', color: Colors.grey),)
                   ],
                 ),
                 Container(
@@ -75,7 +75,7 @@ class ActivityWidget extends StatelessWidget {
                     children: [
                       const Icon(Icons.perm_identity, color: Colors.grey, size: 18,),
                       const SizedBox(width: 5,),
-                      Text('$spots spots left', style: const TextStyle(color: Colors.grey),)
+                      Text('$spots spots left', style: const TextStyle(fontFamily: 'sf-pro-display', color: Colors.grey),)
                     ],
                   ),
                 ),
@@ -84,7 +84,7 @@ class ActivityWidget extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Text(price, style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 20),),
+                Text(price, style: const TextStyle(fontFamily: 'sf-pro-display', color: Colors.black, fontWeight: FontWeight.bold, fontSize: 20),),
                 const SizedBox(height: 10,),
                 CustomButton(
                     width: 70,
