@@ -46,34 +46,36 @@ class _HomeState extends State<Home> {
             const GoalCard(),
             const SizedBox(height: 20,),
             const SearchField(),
-            Padding(
-              padding: const EdgeInsets.only(left: 20, top: 20),
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(right: 8.0),
-                      child: Container(
-                        height: 30,
-                        width: 80,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5),
-                            color: Colors.purple.shade100
-                        ),
-                        child: const Center(
-                          child: Icon(IconlyLight.filter)
+            Center(
+              child: Padding(
+                padding: const EdgeInsets.only(left: 20, top: 20),
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(right: 8.0),
+                        child: Container(
+                          height: 30,
+                          width: 80,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5),
+                              color: Colors.purple.shade100
+                          ),
+                          child: const Center(
+                            child: Icon(IconlyLight.filter)
+                          ),
                         ),
                       ),
-                    ),
-                    CategoryButtons(
-                      categories: categoryProvider.categories,
-                      selectedCategory: categoryProvider.selectedCategory,
-                      onCategorySelected: (String category) {
-                        categoryProvider.selectCategory(category);
-                      },
-                    ),
-                  ],
+                      CategoryButtons(
+                        categories: categoryProvider.categories,
+                        selectedCategory: categoryProvider.selectedCategory,
+                        onCategorySelected: (String category) {
+                          categoryProvider.selectCategory(category);
+                        },
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
