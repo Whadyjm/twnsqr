@@ -7,7 +7,8 @@ class CustomButton extends StatelessWidget {
     required this.height,
     required this.text,
     required this.color,
-    required this.fontColor
+    required this.fontColor,
+    this.onPressed
   });
 
   double height;
@@ -15,18 +16,24 @@ class CustomButton extends StatelessWidget {
   String text;
   Color color;
   Color fontColor;
+  void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(5),
-      height: height,
-      width: width,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
-        color: color,
+    return MaterialButton(
+      splashColor: Colors.transparent,
+      minWidth: width,
+      onPressed: onPressed,
+      child: Container(
+        padding: const EdgeInsets.all(5),
+        height: height,
+        width: width,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8),
+          color: color,
+        ),
+        child: Center(child: Text(text, style: TextStyle(fontFamily: 'sf-pro-display', color: fontColor),)),
       ),
-      child: Center(child: Text(text, style: TextStyle(fontFamily: 'sf-pro-display', color: fontColor),)),
     );
   }
 }

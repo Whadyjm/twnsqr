@@ -36,7 +36,6 @@ class GoalCard extends StatelessWidget {
                 padding: const EdgeInsets.all(15.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text("You're close to your goal!", style: TextStyle(fontFamily: 'sf-pro-display', fontSize: 18, color: Colors.black, fontWeight: FontWeight.w600),),
                     const Text('Join more sport activities to collect\nmore points', style: TextStyle(fontFamily: 'sf-pro-display', color: Colors.black),),

@@ -87,6 +87,16 @@ class ActivityWidget extends StatelessWidget {
                 Text(price, style: const TextStyle(fontFamily: 'sf-pro-display', color: Colors.black, fontWeight: FontWeight.bold, fontSize: 20),),
                 const SizedBox(height: 10,),
                 CustomButton(
+                  onPressed: (){
+
+                    int.parse(spots) != 0
+                        ? ScaffoldMessenger.of(context).showSnackBar( const SnackBar(
+                      duration: Duration(seconds: 1),
+                      backgroundColor: Colors.black,
+                      content: Text('you have joined the activity!', style: TextStyle(fontFamily: 'sf-pro-display'),),
+                    ))
+                        : null;
+                  },
                     width: 70,
                     height: 40,
                     text: int.parse(spots) == 0 ? 'Sold Out':'Join',
