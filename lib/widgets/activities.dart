@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:iconly/iconly.dart';
 import 'package:provider/provider.dart';
 import 'package:twnsqr/models/activityModel.dart';
 import 'package:twnsqr/provider/categoryProvider.dart';
 import 'package:twnsqr/widgets/activityWidget.dart';
+import 'package:twnsqr/widgets/customTitle.dart';
 
 class Activities extends StatefulWidget {
   const Activities({super.key});
@@ -53,8 +55,10 @@ class _ActivitiesState extends State<Activities> {
   @override
   Widget build(BuildContext context) {
 
-    final categoryProvider = Provider.of<CategoryProvider>(context);
+    final categoryProvider = Provider.of<CategoryProvider>(context); /// instance for category provider
 
+
+    /// piece of code for categories filtering
     List<ActivityModel> filteredActivities = categoryProvider.selectedCategory == 'All'
         ? activityList
         : activityList.where((activity) => activity.category == categoryProvider.selectedCategory).toList();
@@ -63,14 +67,27 @@ class _ActivitiesState extends State<Activities> {
       child: SizedBox(
         height: 700,
         width: 320,
-        child: AnimatedSwitcher(
-          duration: const Duration(milliseconds: 300),
-          child: ListView.builder(
-            key: ValueKey(categoryProvider.selectedCategory),
+        child: AnimatedSwitcher( /// flutter widget that allows a smooth animation when switch between filters
+          duration: const Duration(milliseconds: 300), /// the duration of animation
+          child: filteredActivities.isEmpty
+              ? Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(30.0),
+                    child: CustomTitle(text: 'Sorry,\nnot activities found\n:(', size: 20),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(30.0),
+                    child: CustomTitle(text: 'Would you like to add\nan activity?', size: 20),
+                  ),
+                ],
+              )
+              : ListView.builder(
+            key: ValueKey(categoryProvider.selectedCategory), ///this key triggers the animation
             scrollDirection: Axis.vertical,
             itemCount: filteredActivities.length,
             itemBuilder: (context, index) {
-              return ActivityWidget(
+              return ActivityWidget( /// widget for every activity card
                 time: filteredActivities[index].time,
                 duration: filteredActivities[index].duration,
                 title: filteredActivities[index].title,

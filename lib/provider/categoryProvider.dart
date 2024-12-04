@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+/// this provider class allow to filter every catergory after pressing the corresponding button
+
 class CategoryProvider extends ChangeNotifier {
   String _selectedCategory = 'All';
   final List<String> _categories = ['All', 'Sports', 'Food','Kids', 'Creative'];

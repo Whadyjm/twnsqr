@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:twnsqr/screens/home.dart';
 
+
+/// this is the initial class, that shows the bottom navigation bar
+/// PageView is used to navigate trough every app screen
+
 class RootScreen extends StatefulWidget {
   const RootScreen({super.key});
 
